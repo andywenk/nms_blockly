@@ -40,6 +40,12 @@ configure :development do
   activate :livereload
 end
 
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host          = 'nms'
+  deploy.path          = '/var/www/nms.de/blockly'
+end
+
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
@@ -67,10 +73,4 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
-end
-
-activate :deploy do |deploy|
-  deploy.deploy_method = :rsync
-  deploy.host          = 'nms'
-  deploy.path          = '/var/www/nms.de/blockly'
 end
