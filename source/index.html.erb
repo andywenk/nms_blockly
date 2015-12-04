@@ -1,0 +1,19 @@
+---
+title: Welcome to Blockly NSM
+---
+
+<p>
+  <button onclick="showCode()">JavaScript zeigen</button>
+  <button onclick="runCode()">JavaScript ausführen</button>
+  <button onclick="BlocklyStorage.link()">Speichern</button>
+  <button onclick="parseCode()">JavaScript parsen</button>
+  <button onclick="stepCode()" id="stepButton" disabled="">JavaScript Steppen</button>
+</p>
+
+<%= partial 'views/toolbox' %>
+
+<div id="blocklyDiv"></div>
+
+<div id="result">
+  <pre id="resultContent"></pre>
+</div>
