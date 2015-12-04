@@ -33,7 +33,7 @@
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+# activate :automatic_image_size
 
 # Reload the browser automatically whenever files change
 configure :development do
@@ -67,4 +67,10 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+activate :deploy do |deploy|
+  deploy.deploy_method = :rsync
+  deploy.host          = 'nms'
+  deploy.path          = '/var/www/nms.de/blockly'
 end
